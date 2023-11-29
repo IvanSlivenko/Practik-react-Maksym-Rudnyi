@@ -1,2 +1,42 @@
-https://youtu.be/rURqaZ05LGs
-00 : 00
+Lesson 1  https://youtu.be/rURqaZ05LGs
+04 : 26
+
+Lesson 2  https://www.youtube.com/watch?v=jnQBw3GQ4vI
+23 : 51 
+
+Lesson 3 https://youtu.be/4Zeufynwurk?t=337
+22 : 54
+
+
+
+
+1 https://mui.com/material-ui/getting-started/installation/
+
+2 https://www.themoviedb.org
+
+3 https://final-form.org/docs/react-final-form/getting-started
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1 npx create-react-app client
+2 yarn add @mui/material @mui/styled-engine-sc styled-components
+4 Підключаємо лінки зі шрифтами
+5 yarn add @mui/icons-material
+
+
+
+
+
+
