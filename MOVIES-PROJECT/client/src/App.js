@@ -1,8 +1,14 @@
-import CssBaseline from "@mui/material/CssBaseline";
+import {
+  CssBaseline,
+  Container,
+  Box
+        } from "@mui/material";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { Navigation } from "./components";
-import Settings from "@mui/icons-material/Settings";
+import { Home, Settings, Recommend } from "./pages";
+
+
 
 
 
@@ -12,10 +18,19 @@ function App() {
     <BrowserRouter>
       <CssBaseline />
       <Navigation />
-      <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="settings" element={<Settings/>} />
-      </Routes>
+      <Box
+        sx={{
+          backgroundColor: (theme) => theme.palette.grey[100]
+        }}
+      >
+        <Container maxWidth="xl">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/recommend" element={<Recommend />} />
+          </Routes>
+        </Container>
+      </Box>
     </BrowserRouter>
   );
 }

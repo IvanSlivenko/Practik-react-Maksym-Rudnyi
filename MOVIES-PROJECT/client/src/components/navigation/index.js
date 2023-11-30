@@ -13,11 +13,14 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
-  Divider,
-    Hidden,
+    Divider,
+  Hidden,
     Menu,
     MenuItem,
-  
+Link
+    
+ 
+ 
 } from "@mui/material";
 
 import MenuIcon from "@mui/icons-material/Menu";
@@ -25,6 +28,10 @@ import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import SettingsIcon from "@mui/icons-material/Settings";
+import { Link as RouterLink } from "react-router-dom";
+
+
+import Settings from "@mui/icons-material/Settings";
 
 const Navigation = () =>{
   const [isDrawerOpen, setdrawerOpen] = useState(false);
@@ -32,18 +39,19 @@ const Navigation = () =>{
   const list = (anchor) => (
     <Box sx={{ width: 250 }} role="presentation">
       <List>
+        <Link component={RouterLink} to="settings">
           <ListItem>
             <ListItemButton>
-              <ListItemIcon>
-                {<SettingsIcon />}
-              </ListItemIcon>
+              <ListItemIcon>{<SettingsIcon />}</ListItemIcon>
               <ListItemText primary="Settings" />
             </ListItemButton>
           </ListItem>
+        </Link>
       </List>
     </Box>
   );
 
+  
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -60,14 +68,25 @@ const Navigation = () =>{
               <MenuIcon />
             </IconButton>
           </Hidden>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Movies recommendation
-          </Typography>
 
-          <Box sx={{ display: { xs: "none", lg: "flex" } }}>
-            <Button sx={{ my: 2, color: "white", display: "block" }}>
-              Settings
-            </Button>
+          <Link component={RouterLink} to="/" sx={{ flexGrow: 1 }}>
+            <Typography
+              variant="h6"
+              component="div"
+              sx={{ color: "wheat", flexGrow: 1 }}
+            >
+              Movies recommendation
+            </Typography>
+          </Link>
+
+          <Box sx={{ display: { xs: "none", lg: "flex" } }}>   
+              <Button
+                sx={{ my: 2, color: "white", display: "block" }}
+                component={RouterLink}
+                to="settings"
+              >
+                Settings
+              </Button>
           </Box>
         </Toolbar>
       </AppBar>
