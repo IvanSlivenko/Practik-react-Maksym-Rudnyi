@@ -33,15 +33,33 @@ const Home = () => {
           <Grid item xs={12}>
             <Paper>Filter section</Paper>
           </Grid>
-          <Grid item xs={4} md={8}>
+          <Grid item xs={12} md={8}>
             <Paper>
-                <MovieCard/>
+        <Box sx={{ flexGrow: 1, marginTop: 2,}} >
+              
+          <Grid container spacing={2}>
+            <Grid item xs={12} md={4} lg={3}>
+              <MovieCard />
+            </Grid>
+
+            <Grid item xs={12} md={4} lg={3}>
+              <MovieCard />
+            </Grid>
+
+            <Grid item xs={12} md={4} lg={3}>
+              <MovieCard />
+            </Grid>
+
+            <Grid item xs={12} md={4} lg={3}>
+              <MovieCard />
+            </Grid>
+          </Grid>
+                
+        </Box>
             </Paper>
           </Grid>
           <Grid item xs={12} md={4}>
-            <SelectedMovies>
-                Selected movies
-            </SelectedMovies>
+            <SelectedMovies>Selected movies</SelectedMovies>
           </Grid>
         </Grid>
       </Box>
