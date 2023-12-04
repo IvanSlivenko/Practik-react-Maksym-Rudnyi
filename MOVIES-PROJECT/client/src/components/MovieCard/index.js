@@ -8,32 +8,54 @@ import Collapse from "@mui/material/Collapse";
 import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import { red } from "@mui/material/colors";
+import { blue, red } from "@mui/material/colors";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import { styles } from "@mui/material/styles";
+import CardMenu from "../CardMenu";
+import PropTypes from 'prop-types';
 
-const MovieCard = () => {
+
+
+
+const CardInfo = styled(CardContent)(({ theme }) => ({
+  "&:last-child": {
+    paddingBottom: theme.spacing(2),
+  },
+}));
+
+const MovieCard = ({movie, onCardSelect}) => {
   return (
-    <Card sx={{ maxWidth: 250 }}>
+    <Card sx={{ maxWidth: 250, position: "relative", border: 1 }}>
+      <CardMenu onCardSelect={onCardSelect} />
       <CardMedia
         component="img"
         height="200"
-        image="https://www.themoviedb.org/t/p/w220_and_h330_face/yEWcwnHx81IoeDvWyDGQGMZzbno.jpg"
-        alt="Paella dish"
+        image={movie.image}
+        alt={movie.title}
       />
-      <CardContent>
+      <CardInfo>
         <Typography variant="h5" gutterBottom>
-          Movies Name
+          {movie.title}
         </Typography>
 
         <Typography variant="subtitle1" gutterBottom>
-          Movies date relise
+          {movie.releaseDate}
         </Typography>
-      </CardContent>
+      </CardInfo>
     </Card>
   );
 };
+MovieCard.propTypes = {
+    movie: PropTypes.shape({
+        image: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        releaseDate: PropTypes.string
+      }).isRequired,
+    onCardSelect: PropTypes.func
+};
+
 
 export default MovieCard;
