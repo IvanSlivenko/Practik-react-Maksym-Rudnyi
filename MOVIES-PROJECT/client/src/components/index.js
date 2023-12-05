@@ -1,9 +1,11 @@
 import Navigation from './navigation'
 import MovieCard from './MovieCard'
 import CardMenu from './CardMenu'
+import MovieCardSelected from './MovieCardSelected'
 
-export { 
+export {
     Navigation,
     MovieCard,
-    CardMenu
-}
+    CardMenu,
+    MovieCardSelected
+};

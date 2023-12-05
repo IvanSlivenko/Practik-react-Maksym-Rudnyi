@@ -1,18 +1,19 @@
 import React from 'react';
-import { MovieCard } from '../components';
+
+import { MovieCardSelected } from "../components";
 import { movies } from './stub';
 
 
 
+
 export default {
-  title: "Card/movies card",
-  component: MovieCard,
+  title: "Card/movies card selected",
+  component: MovieCardSelected,
   tags: ["autodocs"],
-  
 }; 
 
-const Template = (args) => <MovieCard {...args} />
-export const Primary = Template.bind({});
+const TemplateSelected = (args) => <MovieCardSelected {...args} />
+export const Primary = TemplateSelected.bind({});
 
 
 
