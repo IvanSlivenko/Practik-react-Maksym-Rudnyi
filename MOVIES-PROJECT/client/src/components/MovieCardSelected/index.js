@@ -9,6 +9,8 @@ import Typography from "@mui/material/Typography";
 import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
+import CardMenu from "../CardMenu";
+import MenuItem from "@mui/material/MenuItem";
 import PropTypes, { number } from "prop-types";
 
 const MovieCardSelected = ({ movie, onCardDelete }) => {
@@ -20,7 +22,14 @@ const MovieCardSelected = ({ movie, onCardDelete }) => {
         image={movie.image}
         alt={movie.title}
       />
-      <Box sx={{ display: "flex", flexDirection: "column" }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          width: "100%",
+          position: "relative",
+        }}
+      >
         <CardContent sx={{ flex: "1 0 auto" }}>
           <Typography component="div" variant="h5">
             {movie.title}
@@ -32,7 +41,7 @@ const MovieCardSelected = ({ movie, onCardDelete }) => {
           >
             {movie.releaseDate}
           </Typography>
-          <Box sx={{ display: "flex", flexDirection: "column"}}>
+          <Box sx={{ display: "flex", flexDirection: "column" }}>
             {movie.genres.length ? (
               <Typography component="div" variant="p">
                 {movie.genres[0].name}
@@ -40,9 +49,12 @@ const MovieCardSelected = ({ movie, onCardDelete }) => {
             ) : null}
 
             <Typography component="div" variant="p">
-                 Length : {movie.runtime}
+              Length : {movie.runtime}
             </Typography>
           </Box>
+          <CardMenu>
+            <MenuItem onClick={onCardDelete}>Delete</MenuItem>
+          </CardMenu>
         </CardContent>
       </Box>
     </Card>

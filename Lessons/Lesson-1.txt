@@ -31,7 +31,23 @@ Lesson 8
 https://youtu.be/_supjU6Wc3A?list=PLlYbsPJVZjByoxkiMq35voVKulO73VuX8&t=1207
 22 : 55
 
+Lesson 9
+https://youtu.be/AUOJ2mhGXNM?list=PLlYbsPJVZjByoxkiMq35voVKulO73VuX8&t=4
+11 : 48
 
+
+npm init -y
+
+npm i apollo-server
+npm i graphql
+
+
+
+
+
+GraphQl
+https://youtu.be/5-IhHv-XrTU?t=50
+00 : 00
 
 
 1 https://mui.com/material-ui/getting-started/installation/
@@ -41,6 +57,9 @@ https://youtu.be/_supjU6Wc3A?list=PLlYbsPJVZjByoxkiMq35voVKulO73VuX8&t=1207
 3 https://final-form.org/docs/react-final-form/getting-started
 
 4 https://next.json-generator.com/
+
+TMDB API
+7ba95238bb2100e91fc653a42a26bdf8
 
 
 

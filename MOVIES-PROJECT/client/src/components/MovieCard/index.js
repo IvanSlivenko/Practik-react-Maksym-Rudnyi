@@ -15,6 +15,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { styles } from "@mui/material/styles";
 import CardMenu from "../CardMenu";
+import MenuItem from "@mui/material/MenuItem";
 import PropTypes from 'prop-types';
 
 
@@ -29,7 +30,11 @@ const CardInfo = styled(CardContent)(({ theme }) => ({
 const MovieCard = ({movie, onCardSelect}) => {
   return (
     <Card sx={{ maxWidth: 250, position: "relative", border: 1 }}>
-      <CardMenu onCardSelect={onCardSelect} />
+      <CardMenu>
+        <MenuItem onClick={onCardSelect}>
+          Select
+        </MenuItem>
+      </CardMenu>
       <CardMedia
         component="img"
         height="200"
