@@ -33,13 +33,33 @@ https://youtu.be/_supjU6Wc3A?list=PLlYbsPJVZjByoxkiMq35voVKulO73VuX8&t=1207
 
 Lesson 9
 https://youtu.be/AUOJ2mhGXNM?list=PLlYbsPJVZjByoxkiMq35voVKulO73VuX8&t=4
-11 : 48
+25 : 19
+
+Lesson 10
+https://youtu.be/nKeM7WqqcmA?list=PLlYbsPJVZjByoxkiMq35voVKulO73VuX8&t=11
+07 : 10
+
+
 
 
 npm init -y
 
 npm i apollo-server
 npm i graphql
+
+
+yarn run sr
+
+https://www.howtographql.com/
+
+https://graphql.org/graphql-js/object-types/
+
+
+yarn add axios
+
+
+
+
 
 
 

@@ -1,21 +1,22 @@
+const fs = require("fs");
+const path = require("path");
+
 const { ApolloServer, gql } = require("apollo-server");
 
-const typeDefs = gql`
-  type Query {
-    "A simple type for getting started!"
-    hello: String
-  }
-`;
+const Query=require('./resolvers/Query')
+
+
 
 // A map of functions which return data for the schema.
 const resolvers = {
-  Query: {
-    hello: () => "world",
-  },
+  Query
 };
 
 const server = new ApolloServer({
-  typeDefs,
+  typeDefs: fs.readFileSync(
+    path.join(__dirname, 'schema.graphql'),
+    'utf8'
+  ),
   resolvers,
 });
 
