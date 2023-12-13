@@ -1,10 +1,10 @@
-import {
-    Box,
-    Grid,
-    Paper,
-    styled
-} from '@mui/material';
+import { useState } from 'react';
+import { Box, Grid, Paper, styled, Pagination } from "@mui/material";
+
+import { useQuery } from "@apollo/client";
 import { MovieCard } from '../../components';
+import { MOVIES_QUERY } from './queries';
+
 
 const SelectedMovies = styled(Paper)(({ theme }) => ({
   backgroundColor: '#fff',  
@@ -22,6 +22,20 @@ const SelectedMovies = styled(Paper)(({ theme }) => ({
 
 
 const Home = () => { 
+  const [page, setPage] = useState(1);
+  const { loading, error, data } = useQuery(MOVIES_QUERY, { variables: { page }});
+  
+  const paginationHandler = (event, page) => { 
+    setPage(page)
+    
+  }
+
+  if (error) { 
+    return 'Error';
+  }
+
+  const pagesCount = data?.movies?.totalPages <= 500 ? data?.movies?.totalPages : 500;
+
     return (
       <Box
         sx={{
@@ -37,23 +51,26 @@ const Home = () => {
             <Paper>
               List of movies
               <Box sx={{ flexGrow: 1, padding: 2 }}>
-                <Grid container spacing={2}>
-                  <Grid item xs={12} sm={6} md={4} lg={3}>
-                    <MovieCard />
+                {loading && "Loading..."}
+                {data && (
+                  <Grid container spacing={2}>
+                    {data.movies.results.map((movie) => (
+                      <Grid key={movie.id} item xs={12} sm={6} md={4} lg={3}>
+                        <MovieCard movie={movie} />
+                      </Grid>
+                    ))}
                   </Grid>
-
-                  <Grid item xs={12} sm={6} md={4} lg={3}>
-                    <MovieCard />
-                  </Grid>
-
-                  <Grid item xs={12} sm={6} md={4} lg={3}>
-                    <MovieCard />
-                  </Grid>
-
-                  <Grid item xs={12} sm={6} md={4} lg={3}>
-                    <MovieCard />
-                  </Grid>
-                </Grid>
+                )}
+              </Box>
+              <Box
+                mt={2}
+                pb={2}
+                sx={{ display: "flex", justifyContent: "center" }}
+              >
+                <Pagination
+                  count={pagesCount}
+                  page={page}
+                  onChange={paginationHandler}/>
               </Box>
             </Paper>
           </Grid>
