@@ -42,7 +42,7 @@ const MovieCardSelected = ({ movie, onCardDelete }) => {
             {movie.releaseDate}
           </Typography>
           <Box sx={{ display: "flex", flexDirection: "column" }}>
-            {movie.genres.length ? (
+            {movie.genres?.length ? (
               <Typography component="div" variant="p">
                 {movie.genres[0].name}
               </Typography>
