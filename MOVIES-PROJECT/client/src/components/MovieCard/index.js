@@ -14,6 +14,8 @@ import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { styles } from "@mui/material/styles";
+import AddBoxOutlinedIcon from "@mui/icons-material/AddBoxOutlined";
+import Box from "@mui/material/Box";
 import CardMenu from "../CardMenu";
 import MenuItem from "@mui/material/MenuItem";
 import PropTypes from 'prop-types';
@@ -27,20 +29,43 @@ const CardInfo = styled(CardContent)(({ theme }) => ({
   },
 }));
 
+const PlusIcon = styled(Box)(({ theme }) => ({ 
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    opacity: 0,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    background: 'rgba(255,255,255,.6)',
+    cursor: 'pointer',
+    '&:hover': {
+      opacity: 1
+    }     
+}))
+
 const MovieCard = ({movie, onCardSelect}) => {
   return (
     <Card sx={{ maxWidth: 250, position: "relative", border: 1 }}>
       <CardMenu>
-        <MenuItem onClick={() => onCardSelect(movie)}>
-          Select
-        </MenuItem>
+        <MenuItem onClick={() => onCardSelect(movie)}>Select</MenuItem>
       </CardMenu>
-      <CardMedia
-        component="img"
-        height="200"
-        image={movie.image}
-        alt={movie.title}
-      />
+      <Box sx={{position: 'r elative'}}>
+        <CardMedia
+          component="img"
+          height="200"
+          image={movie.image}
+          alt={movie.title}
+        />
+
+        <PlusIcon onClick={() => onCardSelect(movie)}>
+          <AddBoxOutlinedIcon sx={{ fontSize: 80 }} />
+        </PlusIcon>
+      </Box>
+
       <CardInfo>
         <Typography variant="h5" gutterBottom>
           {movie.title}

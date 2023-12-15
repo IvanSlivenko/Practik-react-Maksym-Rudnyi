@@ -21,6 +21,7 @@ import { BASE_URI } from "./config";
     const client = new ApolloClient({
       uri: `${BASE_URI}`,
       cache: new InMemoryCache(),
+      connectToDevTools:true
     });
 
     return (
