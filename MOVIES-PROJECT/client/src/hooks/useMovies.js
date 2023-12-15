@@ -19,7 +19,9 @@ export const useMovies = () => {
             }
           },[selectedMovies]);
 
-    const deleteMovie = useCallback(() => { }, []);
+  const deleteMovie = useCallback((movie) => {
+    setSelectedMovies(selectedMovies.filter(({id}) => id !== movie.id))
+    }, [selectedMovies]);
     return {
         selectedMovies,
         selectMovie,
