@@ -31,7 +31,14 @@ const NoMovies = styled(Box)(({theme}) => ({
     flexDirection: 'column'
 }))
 
-const SelectedMoviesSection = ({ selectedMovies, deleteMovie }) => {  
+const SelectedMoviesSection = ({ selectedMovies, deleteMovie }) => {
+        const onSubmit = ({ ListName }) => {
+          const ids = selectedMovies.map(({ id }) => id);
+          const link = `${
+            window.location.host
+          }/recommend?title=${ListName}&ids=${ids.join()}; `;
+         ;
+        };
     if (!selectedMovies?.length) {
         return (
             <SelectedMovies>
@@ -63,7 +70,7 @@ const SelectedMoviesSection = ({ selectedMovies, deleteMovie }) => {
                 ))}
             </MoviesList>
             <Box pt={2}>
-                <SelectedMoviesForm/>
+                <SelectedMoviesForm onSubmit={onSubmit}/>
             </Box>
         </SelectedMovies>
     )

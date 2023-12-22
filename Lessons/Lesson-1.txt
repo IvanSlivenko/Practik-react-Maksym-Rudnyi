@@ -49,9 +49,15 @@ https://youtu.be/TRsc_UzsEX4?list=PLlYbsPJVZjByoxkiMq35voVKulO73VuX8&t=1106
  
 Lesson 13
 https://youtu.be/5EAUMSftaPM?list=PLlYbsPJVZjByoxkiMq35voVKulO73VuX8&t=2
-19 : 37
+28 : 05
 
+Lesson 14 
+https://youtu.be/nWknnzkbxgU?list=PLlYbsPJVZjByoxkiMq35voVKulO73VuX8&t=1
+14 : 46
 
+Lesson 15
+https://youtu.be/4oqRbrz6WHo?list=PLlYbsPJVZjByoxkiMq35voVKulO73VuX8&t=4
+12 : 03
 
 
 npm init -y
@@ -68,6 +74,10 @@ https://graphql.org/graphql-js/object-types/
 
 
 yarn add axios
+
+https://final-form.org/docs/react-final-form/getting-started
+
+yarn add final-form react-final-form
 
 
 
