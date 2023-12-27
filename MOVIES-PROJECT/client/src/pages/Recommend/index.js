@@ -1,4 +1,9 @@
 const Recommend = () => {
-  return <div>Recommend page</div>;
+  
+  return (
+  <div>
+    Recommend page
+    </div>;
+  )
 };
 export default Recommend;

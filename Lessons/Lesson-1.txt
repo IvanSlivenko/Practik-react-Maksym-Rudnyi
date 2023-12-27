@@ -57,13 +57,28 @@ https://youtu.be/nWknnzkbxgU?list=PLlYbsPJVZjByoxkiMq35voVKulO73VuX8&t=1
 
 Lesson 15
 https://youtu.be/4oqRbrz6WHo?list=PLlYbsPJVZjByoxkiMq35voVKulO73VuX8&t=4
-12 : 03
+30 : 55
+
+Lesson 16
+https://youtu.be/oByTTgVmK34?list=PLlYbsPJVZjByoxkiMq35voVKulO73VuX8&t=1
+16 : 07
+
+Lesson 17  
+https://youtu.be/8T6zu9Yiavw?list=PLlYbsPJVZjByoxkiMq35voVKulO73VuX8&t=2
+02 : 46
+
+
 
 
 npm init -y
 
 npm i apollo-server
 npm i graphql
+
+https://studio.apollographql.com/sandbox/explorer
+
+
+yarn add react-copy-to-clipboard
 
 
 yarn run sr
